@@ -1,0 +1,78 @@
+{
+  "name": "mirro-api",
+  "version": "1.8.0",
+  "description": "Mirro API",
+  "private": true,
+  "main": "dist/server.js",
+  "scripts": {
+    "build-ts": "tsc",
+    "lint": "tsc --noEmit && prettier --write \"**/*.{js,ts}\"",
+    "build": "pnpm run lint && pnpm run build-ts",
+    "dev": "nodemon --ignore tests/ --watch src -e ts,tsx --exec esno src/server.ts",
+    "start": "esno src/server.ts",
+    "test": "jest",
+    "test:coverage": "jest --collect-coverage",
+    "test:watch": "jest --watch"
+  },
+  "engines": {
+    "node": "18.x.x"
+  },
+  "author": "Javier Aviles",
+  "devDependencies": {
+    "@types/async": "^3.2.20",
+    "@types/cron": "^1.7.3",
+    "@types/jest": "^26.0.22",
+    "@types/koa": "^2.13.6",
+    "@types/koa__cors": "^3.1.0",
+    "@types/lodash": "^4.14.195",
+    "@types/node": "^14.14.37",
+    "@types/node-fetch": "^2.6.4",
+    "@types/readable-stream": "^2.3.15",
+    "@typescript-eslint/eslint-plugin": "^4.20.0",
+    "@typescript-eslint/parser": "^4.20.0",
+    "eslint": "^7.23.0",
+    "eslint-config-prettier": "^8.8.0",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.8.8",
+    "ts-jest": "^26.5.4",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "@koa/router": "^10.0.0",
+    "@sentry/node": "^7.57.0",
+    "@sentry/utils": "^7.57.0",
+    "async": "^3.2.4",
+    "class-validator": "^0.13.1",
+    "cron": "^1.8.2",
+    "dotenv": "^16.3.1",
+    "esno": "^0.16.3",
+    "eventsource-parser": "^1.0.0",
+    "fast-xml-parser": "^4.2.5",
+    "ioredis": "^5.3.2",
+    "koa": "^2.13.6",
+    "koa-body": "^6.0.1",
+    "koa-swagger-decorator": "^1.6.4",
+    "leancloud-realtime": "^5.0.0-rc.8",
+    "leancloud-storage": "^4.15.0",
+    "leanengine": "^3.8.0",
+    "lodash": "^4.17.21",
+    "node-fetch": "2",
+    "readable-stream": "^4.4.1",
+    "reflect-metadata": "^0.1.13",
+    "winston": "^3.3.3",
+    "winston-transport": "^4.5.0"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>"
+    ],
+    "testMatch": [
+      "**/tests/**/*.+(ts|tsx|js)"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    }
+  }
+}

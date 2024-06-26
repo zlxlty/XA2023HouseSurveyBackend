@@ -1,0 +1,6 @@
+install:
+  - require:
+    - package.json
+    - yarn.lock
+  - yarn install
+  - use: default
